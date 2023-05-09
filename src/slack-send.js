@@ -87,7 +87,7 @@ module.exports = async function slackSend(core) {
             }
 
             // update message
-            webResponses[index] = await web.chat.update({ tsVal, channel: channelId.trim(), text: message, ...(payload || {}) });
+            webResponses[index] = await web.chat.update({ ts: tsVal, channel: channelId.trim(), text: message, ...(payload || {}) });
           } else {
             // post message
             webResponses[index] = await web.chat.postMessage({ channel: channelId.trim(), text: message, ...(payload || {}) });
